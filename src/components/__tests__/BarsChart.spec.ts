@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
 import BarsChart from '../BarsChart.vue'
 
 describe('BarsChart', () => {
@@ -7,8 +7,8 @@ describe('BarsChart', () => {
   it('renders when valid data is provided', () => {
     const wrapper = mount(BarsChart, {
       props: {
-        data: [1, 2, 3],
-      },
+        data: [1, 2, 3]
+      }
     })
     expect(wrapper.find('svg').exists()).toBe(true)
     expect(wrapper.find('.vue-bars').exists()).toBe(true)
@@ -18,8 +18,8 @@ describe('BarsChart', () => {
   it('does not render when no data is provided', () => {
     const wrapper = mount(BarsChart, {
       props: {
-        data: [],
-      },
+        data: []
+      }
     })
     expect(wrapper.find('svg').exists()).toBe(false)
   })
@@ -32,8 +32,8 @@ describe('BarsChart', () => {
       props: {
         data: [1, 2, 3],
         width,
-        height,
-      },
+        height
+      }
     })
     const svg = wrapper.find('svg')
     expect(svg.attributes('width')).toBe(`${width}px`)
@@ -45,12 +45,12 @@ describe('BarsChart', () => {
   it('handles data points with titles', () => {
     const dataWithTitles = [
       { value: 1, title: 'First' },
-      { value: 2, title: 'Second' },
+      { value: 2, title: 'Second' }
     ]
     const wrapper = mount(BarsChart, {
       props: {
-        data: dataWithTitles,
-      },
+        data: dataWithTitles
+      }
     })
     expect(wrapper.find('svg').exists()).toBe(true)
   })
@@ -60,8 +60,8 @@ describe('BarsChart', () => {
     const wrapper = mount(BarsChart, {
       props: {
         data: [1, 2, 3],
-        labelData: ['A', 'B', 'C'],
-      },
+        labelData: ['A', 'B', 'C']
+      }
     })
     const labels = wrapper.findAll('.v-bars--label-text')
     expect(labels.length).toBe(3)
@@ -72,8 +72,8 @@ describe('BarsChart', () => {
     const wrapper = mount(BarsChart, {
       props: {
         data: [1, 2, 3],
-        gradient: ['#000', '#fff'],
-      },
+        gradient: ['#000', '#fff']
+      }
     })
     expect(wrapper.find('svg').exists()).toBe(true)
   })
@@ -81,13 +81,13 @@ describe('BarsChart', () => {
   // Test custom styling
   it('applies custom SVG styles', () => {
     const customStyle = {
-      backgroundColor: 'red',
+      backgroundColor: 'red'
     }
     const wrapper = mount(BarsChart, {
       props: {
         data: [1, 2, 3],
-        svgStyle: customStyle,
-      },
+        svgStyle: customStyle
+      }
     })
     const svg = wrapper.find('svg')
     expect(svg.attributes('style')).toContain('background-color: red')

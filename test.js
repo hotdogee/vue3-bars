@@ -1,5 +1,0 @@
-console.log(import.meta.url)
-const url = new URL(import.meta.url)
-console.log(url.protocol)
-console.log(import.meta.dirname)
-console.log(import.meta.filename)

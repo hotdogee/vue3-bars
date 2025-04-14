@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Bars from './components/BarsChart.vue'
 import { ref } from 'vue'
+import Bars from './components/BarsChart.vue'
 const barWidth = ref(15)
 </script>
 
@@ -32,7 +32,7 @@ const barWidth = ref(15)
           '12',
           '13',
           '14',
-          '15',
+          '15'
         ]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
@@ -57,7 +57,7 @@ const barWidth = ref(15)
           '12',
           '13',
           '14',
-          '15',
+          '15'
         ]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
@@ -82,7 +82,7 @@ const barWidth = ref(15)
           '12',
           '13',
           '14',
-          '15',
+          '15'
         ]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
@@ -107,7 +107,7 @@ const barWidth = ref(15)
           '12',
           '13',
           '14',
-          '15',
+          '15'
         ]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
@@ -132,7 +132,7 @@ const barWidth = ref(15)
           '12',
           '13',
           '14',
-          '15',
+          '15'
         ]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
@@ -156,7 +156,7 @@ const barWidth = ref(15)
           { value: 26, title: 'Tooltip 26' },
           { value: 28, title: 'Tooltip 28' },
           { value: 30, title: 'Tooltip 30' },
-          { value: 32, title: 'Tooltip 32' },
+          { value: 32, title: 'Tooltip 32' }
         ]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
@@ -181,7 +181,7 @@ const barWidth = ref(15)
           '12',
           '13',
           '14',
-          '15',
+          '15'
         ]"
         :gradient="['#6fa8dc', '#42b983']"
         :barWidth
@@ -207,7 +207,7 @@ const barWidth = ref(15)
           'Label 12',
           'Label 13',
           'Label 14',
-          'Label 15',
+          'Label 15'
         ]"
         :gradient="['#6fa8dc', '#42b983']"
         :barWidth

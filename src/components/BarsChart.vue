@@ -12,76 +12,76 @@ interface PointInput {
 const props = defineProps({
   data: {
     type: Array as PropType<(number | PointInput)[]>,
-    required: true,
+    required: true
   },
   // autoDraw: Boolean, // This prop seems unused, omitting for now unless needed
   barWidth: {
     type: Number,
-    default: 8, // Default can be managed here or within Path.vue/helpers
+    default: 8 // Default can be managed here or within Path.vue/helpers
   },
   rounding: {
     type: Number,
-    default: 2,
+    default: 2
   },
   growDuration: {
     type: Number,
-    default: 0.5,
+    default: 0.5
   },
   gradient: {
     type: Array as PropType<string[]>,
-    default: () => ['#000'],
+    default: () => ['#000']
   },
   max: {
     type: Number,
-    default: -Infinity,
+    default: -Infinity
   },
   min: {
     type: Number,
-    default: Infinity,
+    default: Infinity
   },
   minBarHeight: {
     type: Number,
-    default: 3,
+    default: 3
   },
   labelData: {
     type: Array as PropType<(string | number)[]>,
-    default: () => [],
+    default: () => []
   },
   labelRotate: {
     type: Number,
-    default: -45,
+    default: -45
   },
   labelColor: {
     type: String,
-    default: '#999',
+    default: '#999'
   },
   labelSize: {
     type: Number,
-    default: 10,
+    default: 10
   },
   labelHeight: {
     type: Number,
-    default: 20,
+    default: 20
   },
   height: {
     type: Number,
-    default: 75, // Default height if not provided
+    default: 75 // Default height if not provided
   },
   width: {
     type: Number,
-    default: 300, // Default width if not provided
+    default: 300 // Default width if not provided
   },
   padding: {
     type: Number,
-    default: 8,
+    default: 8
   },
   svgStyle: {
     type: Object,
     default: () => ({
       display: 'block' /* Prevent inline spacing issues */,
-      overflow: 'visible' /* Allow labels/elements outside viewBox if needed */,
-    }),
-  },
+      overflow: 'visible' /* Allow labels/elements outside viewBox if needed */
+    })
+  }
 })
 
 // Computed property to determine if the component should render
@@ -100,7 +100,7 @@ const boundary = computed(() => ({
   minY: props.padding,
   maxX: viewWidth.value - props.padding,
   maxY: viewHeight.value - props.padding,
-  minBarHeight: props.minBarHeight,
+  minBarHeight: props.minBarHeight
 }))
 
 // Combined label properties object to pass to Path component
@@ -114,7 +114,7 @@ const labelProps = computed(() => ({
   minX: boundary.value.minX,
   minY: boundary.value.minY,
   maxX: boundary.value.maxX,
-  maxY: boundary.value.maxY,
+  maxY: boundary.value.maxY
 }))
 </script>
 

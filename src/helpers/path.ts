@@ -74,7 +74,7 @@ export function genPoints(
   { minX, minY, maxX, maxY, minBarHeight }: Boundary,
   barWidth: number,
   { max, min }: { max: number; min: number },
-  labelProps: LabelProps, // Used to check if labels exist
+  labelProps: LabelProps // Used to check if labels exist
 ): Point[] {
   const arr = inArr.map((item) => (typeof item === 'number' ? item : item.value))
   const minValue = Math.min(...arr, min === Infinity ? (arr.length ? Math.min(...arr) : 0) : min)
@@ -125,7 +125,7 @@ export function genPoints(
       y: value >= 0 ? zeroLineY - barHeight : zeroLineY,
       height: barHeight,
       title: title,
-      zeroLineY, // Add zeroLineY to point data
+      zeroLineY // Add zeroLineY to point data
     }
   })
 }
@@ -135,7 +135,7 @@ export function genPoints(
  */
 export function genBarsData(
   points: Point[],
-  props: BarProps & Boundary, // Combine types for easier access
+  props: BarProps & Boundary // Combine types for easier access
 ): BarData[] {
   const { maxX, gradient, growDuration } = props
   const barWidth =
@@ -162,7 +162,7 @@ export function genBarsData(
     rx: rounding,
     ry: rounding,
     title: item.title,
-    growDuration: growDuration,
+    growDuration: growDuration
   }))
 }
 
@@ -171,7 +171,7 @@ export function genBarsData(
  */
 export function genLabelsData(
   points: Point[],
-  props: LabelProps & Pick<BarProps, 'barWidth' | 'padding'>,
+  props: LabelProps & Pick<BarProps, 'barWidth' | 'padding'>
 ): LabelData[] {
   const { labelData, labelRotate, labelColor, labelSize } = props
   if (!labelData || labelData.length === 0 || !points.length) return []
@@ -190,7 +190,7 @@ export function genLabelsData(
         transformText: `rotate(${labelRotate}, ${labelX}, ${labelY})`,
         style: `text-anchor: end; fill:${labelColor}; font-size:${labelSize}px; user-select: none;`,
         text: title,
-        title: point.title,
+        title: point.title
       }
     })
     .filter((item): item is LabelData => item !== null)

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, type PropType } from 'vue'
-import { genPoints, genBarsData, genLabelsData } from '../helpers/path'
+import { genBarsData, genLabelsData, genPoints } from '../helpers/path'
 
 // Define types for props based on helper types
 interface PointInput {
@@ -31,46 +31,46 @@ interface LabelProps {
 const props = defineProps({
   data: {
     type: Array as PropType<(number | PointInput)[]>,
-    required: true,
+    required: true
   },
   boundary: {
     type: Object as PropType<Boundary>,
-    required: true,
+    required: true
   },
   barWidth: {
     type: Number,
-    default: 8, // Allow helper to calculate default
+    default: 8 // Allow helper to calculate default
   },
   rounding: {
     type: Number,
-    default: 2,
+    default: 2
   },
   gradient: {
     type: Array as PropType<string[]>,
-    default: () => ['#000'],
+    default: () => ['#000']
   },
   growDuration: {
     type: Number,
-    default: 0.5,
+    default: 0.5
   },
   max: {
     type: Number,
-    default: -Infinity,
+    default: -Infinity
   },
   min: {
     type: Number,
-    default: Infinity,
+    default: Infinity
   },
   labelProps: {
     // Combine label-related props
     type: Object as PropType<LabelProps>,
-    required: true,
+    required: true
   },
   padding: {
     // Pass padding for barWidth calculation in helpers
     type: Number,
-    default: 8,
-  },
+    default: 8
+  }
 })
 
 // Calculate points
@@ -84,7 +84,7 @@ const points = computed(() => {
     props.boundary,
     props.barWidth,
     { max: maxVal, min: minVal },
-    props.labelProps,
+    props.labelProps
   )
 })
 // console.log('points', points.value)
@@ -99,7 +99,7 @@ const barsData = computed(() => {
     padding: props.padding,
     rounding: props.rounding,
     growDuration: props.growDuration,
-    ...props.boundary, // Spread boundary props
+    ...props.boundary // Spread boundary props
   })
 })
 // console.log('barsData', barsData.value)
@@ -119,7 +119,7 @@ const labelsData = computed(() => {
     minX: props.labelProps.minX,
     minY: props.labelProps.minY,
     maxX: props.labelProps.maxX,
-    maxY: props.labelProps.maxY,
+    maxY: props.labelProps.maxY
   })
 })
 // console.log('labelsData', labelsData.value)

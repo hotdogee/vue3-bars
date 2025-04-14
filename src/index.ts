@@ -11,7 +11,7 @@ const install = (app: App) => {
 // Export the plugin object
 export default {
   install,
-  Bars, // Export the component as default
+  Bars // Export the component as default
 }
 
 // Allow named export of the component itself
