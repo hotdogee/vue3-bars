@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/deviavir/vue-bar/master/media/logo.png" width="500" alt="Vue Bars">
   <br>
-  <h1>Vue Bars</h1>
+  <h1>Vue 3 Bars</h1>
   <p>🌈 Simple, elegant spark bars for Vue.js</p>
   <br>
   <a href="https://www.npmjs.org/package/vue3-bars"><img src="https://img.shields.io/npm/v/vue3-bars.svg?style=flat" alt="npm"></a>
@@ -19,7 +19,7 @@ npm i vue3-bars
 ## Usage
 
 ```js
-import VueBars from 'vue3-bars'
+import { VueBars } from 'vue3-bars'
 ```
 
 [Live Demo](https://jsfiddle.net/h1o5z4xe/)
