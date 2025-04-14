@@ -1,4 +1,4 @@
-import { defineComponent as V, computed as h, createElementBlock as y, openBlock as f, Fragment as W, renderList as H, createElementVNode as _, toDisplayString as M, normalizeStyle as Y, createVNode as X } from "vue";
+import { defineComponent as Y, computed as h, createElementBlock as y, openBlock as f, Fragment as W, renderList as H, createElementVNode as _, toDisplayString as M, normalizeStyle as z, createVNode as R } from "vue";
 function N(a, t, l) {
   l = l + 1;
   const n = parseInt(a, 16), o = parseInt(t, 16), r = [], e = (n - o) / l;
@@ -9,37 +9,37 @@ function N(a, t, l) {
   }
   return r;
 }
-function k(a, t, l = 3) {
+function X(a, t, l = 3) {
   const n = a.slice(0, 2), o = a.slice(2, 4), r = a.slice(4, 6), u = t.slice(0, 2), e = t.slice(2, 4), i = t.slice(4, 6), s = N(n, u, l), d = N(o, e, l), g = N(r, i, l), m = [];
   return s.forEach((P, b) => {
     m.push("" + s[b] + d[b] + g[b]);
   }), m;
 }
-function j(a, t, l) {
-  return a = a.replace("#", ""), t = t.replace("#", ""), k(a, t, l).map((o) => "#" + o);
+function k(a, t, l) {
+  return a = a.replace("#", ""), t = t.replace("#", ""), X(a, t, l).map((o) => "#" + o);
 }
-function q(a, { minX: t, minY: l, maxX: n, maxY: o, minBarHeight: r }, u, { max: e, min: i }, s) {
-  const d = a.map((c) => typeof c == "number" ? c : c.value), g = Math.min(...d, i === 1 / 0 ? d.length ? Math.min(...d) : 0 : i), m = Math.max(...d, e === -1 / 0 ? d.length ? Math.max(...d) : 0 : e), P = Math.abs(m), b = Math.abs(g), B = d.length > 1 ? (n - t - u) / (d.length - 1) : n - t, w = s.labelData.length > 0 ? s.labelHeight : 0;
+function j(a, { minX: t, minY: l, maxX: n, maxY: o, minBarHeight: r }, u, { max: e, min: i }, s) {
+  const d = a.map((c) => typeof c == "number" ? c : c.value), g = Math.min(...d, i === 1 / 0 ? d.length ? Math.min(...d) : 0 : i), m = Math.max(...d, e === -1 / 0 ? d.length ? Math.max(...d) : 0 : e), P = Math.abs(m), b = Math.abs(g), I = d.length > 1 ? (n - t - u) / (d.length - 1) : n - t, w = s.labelData.length > 0 ? s.labelHeight : 0;
   let p = 0;
   g < 0 && m <= 0 ? p = b : g < 0 && m > 0 ? p = b + P : p = m;
-  const $ = o - l - w, x = p !== 0 && $ > 0 ? $ / p : 1, I = g >= 0 && g * x < r ? 0 : g < 0 && b * x < r ? r - b * x : 0, D = g < 0 ? o - w - b * x : o - w;
+  const $ = o - l - w, x = p !== 0 && $ > 0 ? $ / p : 1, V = g >= 0 && g * x < r ? 0 : g < 0 && b * x < r ? r - b * x : 0, D = g < 0 ? o - w - b * x : o - w;
   return d.map((c, v) => {
-    const C = typeof a[v] == "number" ? String(a[v]) : a[v].title ?? String(c), R = Math.abs(c) * x, S = Math.max(R - (c >= 0 ? 0 : I), r);
+    const B = typeof a[v] == "number" ? String(a[v]) : a[v].title ?? String(c), C = Math.abs(c) * x, S = Math.max(C - (c >= 0 ? 0 : V), r);
     return {
-      x: d.length > 1 ? v * B + t : t + (n - t - u) / 2,
+      x: d.length > 1 ? v * I + t : t + (n - t - u) / 2,
       // If value is negative, y starts at zeroLine, otherwise it's zeroLine - barHeight
       y: c >= 0 ? D - S : D,
       height: S,
-      title: C,
+      title: B,
       zeroLineY: D
       // Add zeroLineY to point data
     };
   });
 }
-function A(a, t) {
+function q(a, t) {
   const { maxX: l, gradient: n, growDuration: o } = t, r = t.barWidth ?? (a.length > 1 ? l / (a.length - 1) - (t.padding ?? 5) : l - t.minX - (t.padding ?? 5) * 2), u = t.rounding ?? 2;
   let e = [];
-  return n && n.length > 1 && a.length > 1 ? e = j(n[0], n[1], a.length - 1) : n && n.length > 0 ? e = a.map(() => n[0]) : e = a.map(() => "#000"), a.map((i, s) => ({
+  return n && n.length > 1 && a.length > 1 ? e = k(n[0], n[1], a.length - 1) : n && n.length > 0 ? e = a.map(() => n[0]) : e = a.map(() => "#000"), a.map((i, s) => ({
     id: `bar-id-${s}`,
     fill: e[s] || n[0] || "#000",
     x: i.x,
@@ -53,7 +53,7 @@ function A(a, t) {
     growDuration: o
   }));
 }
-function E(a, t) {
+function A(a, t) {
   const { labelData: l, labelRotate: n, labelColor: o, labelSize: r } = t;
   if (!l || l.length === 0 || !a.length) return [];
   const u = t.maxY - t.labelHeight + 10;
@@ -70,10 +70,10 @@ function E(a, t) {
     };
   }).filter((e) => e !== null);
 }
-const G = {
+const E = {
   class: "container",
   transform: "translate(0, 0)"
-}, L = ["id", "fill", "x", "y", "width", "height", "rx", "ry"], O = ["to", "dur"], T = ["from", "to", "dur"], F = ["x", "y", "transform"], J = /* @__PURE__ */ V({
+}, G = ["id", "fill", "x", "y", "width", "height", "rx", "ry"], L = ["to", "dur"], O = ["from", "to", "dur"], T = ["x", "y", "transform"], F = /* @__PURE__ */ Y({
   __name: "PathGroup",
   props: {
     data: {
@@ -124,14 +124,14 @@ const G = {
     const t = a, l = h(() => {
       if (!t.data || t.data.length === 0) return [];
       const r = typeof t.min == "number" ? t.min : -1 / 0, u = typeof t.max == "number" ? t.max : 1 / 0;
-      return q(
+      return j(
         t.data,
         t.boundary,
         t.barWidth,
         { max: u, min: r },
         t.labelProps
       );
-    }), n = h(() => l.value.length ? A(l.value, {
+    }), n = h(() => l.value.length ? q(l.value, {
       // Pass combined props needed by genBarsData
       gradient: t.gradient,
       barWidth: t.barWidth,
@@ -142,7 +142,7 @@ const G = {
       // Spread boundary props
     }) : []), o = h(() => {
       var r;
-      return !l.value.length || !((r = t.labelProps.labelData) != null && r.length) ? [] : E(l.value, {
+      return !l.value.length || !((r = t.labelProps.labelData) != null && r.length) ? [] : A(l.value, {
         // Pass combined props needed by genLabelsData
         labelData: t.labelProps.labelData,
         labelRotate: t.labelProps.labelRotate,
@@ -159,7 +159,7 @@ const G = {
         maxY: t.labelProps.maxY
       });
     });
-    return (r, u) => (f(), y("g", G, [
+    return (r, u) => (f(), y("g", E, [
       (f(!0), y(W, null, H(n.value, (e) => (f(), y("rect", {
         key: e.id,
         id: e.id,
@@ -177,27 +177,27 @@ const G = {
           to: e.height,
           dur: `${e.growDuration}s`,
           fill: "freeze"
-        }, null, 8, O),
+        }, null, 8, L),
         _("animate", {
           attributeName: "y",
           from: a.boundary.maxY - (t.labelProps.labelData.length > 0 ? 20 : 0),
           to: e.y,
           dur: `${e.growDuration}s`,
           fill: "freeze"
-        }, null, 8, T),
+        }, null, 8, O),
         _("title", null, M(e.title), 1)
-      ], 8, L))), 128)),
+      ], 8, G))), 128)),
       (f(!0), y(W, null, H(o.value, (e, i) => (f(), y("text", {
         key: `label-${i}`,
         class: "v-bars--label-text",
-        style: Y(e.style),
+        style: z(e.style),
         x: e.x,
         y: e.y,
         transform: e.transformText
-      }, M(e.text), 13, F))), 128))
+      }, M(e.text), 13, T))), 128))
     ]));
   }
-}), K = ["width", "height", "viewBox"], Q = { key: 1 }, z = /* @__PURE__ */ V({
+}), J = ["width", "height", "viewBox"], K = { key: 1 }, U = /* @__PURE__ */ Y({
   __name: "VueBars",
   props: {
     data: {
@@ -301,10 +301,10 @@ const G = {
       width: n.value,
       height: o.value,
       viewBox: e.value,
-      style: Y(a.svgStyle),
+      style: z(a.svgStyle),
       class: "vue-bars"
     }, [
-      X(J, {
+      R(F, {
         data: t.data,
         boundary: i.value,
         barWidth: t.barWidth,
@@ -316,16 +316,9 @@ const G = {
         labelProps: s.value,
         padding: t.padding
       }, null, 8, ["data", "boundary", "barWidth", "rounding", "gradient", "growDuration", "max", "min", "labelProps", "padding"])
-    ], 12, K)) : (f(), y("div", Q));
+    ], 12, J)) : (f(), y("div", K));
   }
-}), U = (a) => {
-  a.component("VueBars", z);
-}, tt = {
-  install: U,
-  VueBars: z
-  // Export the component as default
-};
+});
 export {
-  z as VueBars,
-  tt as default
+  U as VueBars
 };
