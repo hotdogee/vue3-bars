@@ -22,7 +22,7 @@ npm i vue3-bars
 import { VueBars } from 'vue3-bars'
 ```
 
-[Live Demo](https://jsfiddle.net/h1o5z4xe/)
+[Live Demo](https://stackblitz.com/~/github.com/hotdogee/vue3-bars?file=src/App.vue)
 
 _vue template_
 
