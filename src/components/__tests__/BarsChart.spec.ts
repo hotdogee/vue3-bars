@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import BarsChart from '../BarsChart.vue'
+import VueBars from '../VueBars.vue'
 
-describe('BarsChart', () => {
+describe('VueBars', () => {
   // Test basic rendering
   it('renders when valid data is provided', () => {
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: [1, 2, 3]
       }
@@ -16,7 +16,7 @@ describe('BarsChart', () => {
 
   // Test empty/invalid data handling
   it('does not render when no data is provided', () => {
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: []
       }
@@ -28,7 +28,7 @@ describe('BarsChart', () => {
   it('applies custom dimensions', () => {
     const width = 400
     const height = 200
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: [1, 2, 3],
         width,
@@ -47,7 +47,7 @@ describe('BarsChart', () => {
       { value: 1, title: 'First' },
       { value: 2, title: 'Second' }
     ]
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: dataWithTitles
       }
@@ -57,7 +57,7 @@ describe('BarsChart', () => {
 
   // Test label rendering
   it('renders labels when provided', () => {
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: [1, 2, 3],
         labelData: ['A', 'B', 'C']
@@ -69,7 +69,7 @@ describe('BarsChart', () => {
 
   // Test gradient props
   it('accepts gradient colors', () => {
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: [1, 2, 3],
         gradient: ['#000', '#fff']
@@ -83,7 +83,7 @@ describe('BarsChart', () => {
     const customStyle = {
       backgroundColor: 'red'
     }
-    const wrapper = mount(BarsChart, {
+    const wrapper = mount(VueBars, {
       props: {
         data: [1, 2, 3],
         svgStyle: customStyle

@@ -1,4 +1,4 @@
-import { defineComponent as Y, computed as h, createElementBlock as y, openBlock as f, Fragment as W, renderList as H, createElementVNode as _, toDisplayString as M, normalizeStyle as z, createVNode as X } from "vue";
+import { defineComponent as V, computed as h, createElementBlock as y, openBlock as f, Fragment as W, renderList as H, createElementVNode as _, toDisplayString as M, normalizeStyle as Y, createVNode as X } from "vue";
 function N(a, t, l) {
   l = l + 1;
   const n = parseInt(a, 16), o = parseInt(t, 16), r = [], e = (n - o) / l;
@@ -19,18 +19,18 @@ function j(a, t, l) {
   return a = a.replace("#", ""), t = t.replace("#", ""), k(a, t, l).map((o) => "#" + o);
 }
 function q(a, { minX: t, minY: l, maxX: n, maxY: o, minBarHeight: r }, u, { max: e, min: i }, s) {
-  const d = a.map((c) => typeof c == "number" ? c : c.value), g = Math.min(...d, i === 1 / 0 ? d.length ? Math.min(...d) : 0 : i), m = Math.max(...d, e === -1 / 0 ? d.length ? Math.max(...d) : 0 : e), P = Math.abs(m), b = Math.abs(g), C = d.length > 1 ? (n - t - u) / (d.length - 1) : n - t, w = s.labelData.length > 0 ? s.labelHeight : 0;
+  const d = a.map((c) => typeof c == "number" ? c : c.value), g = Math.min(...d, i === 1 / 0 ? d.length ? Math.min(...d) : 0 : i), m = Math.max(...d, e === -1 / 0 ? d.length ? Math.max(...d) : 0 : e), P = Math.abs(m), b = Math.abs(g), B = d.length > 1 ? (n - t - u) / (d.length - 1) : n - t, w = s.labelData.length > 0 ? s.labelHeight : 0;
   let p = 0;
   g < 0 && m <= 0 ? p = b : g < 0 && m > 0 ? p = b + P : p = m;
   const $ = o - l - w, x = p !== 0 && $ > 0 ? $ / p : 1, I = g >= 0 && g * x < r ? 0 : g < 0 && b * x < r ? r - b * x : 0, D = g < 0 ? o - w - b * x : o - w;
   return d.map((c, v) => {
-    const V = typeof a[v] == "number" ? String(a[v]) : a[v].title ?? String(c), R = Math.abs(c) * x, S = Math.max(R - (c >= 0 ? 0 : I), r);
+    const C = typeof a[v] == "number" ? String(a[v]) : a[v].title ?? String(c), R = Math.abs(c) * x, S = Math.max(R - (c >= 0 ? 0 : I), r);
     return {
-      x: d.length > 1 ? v * C + t : t + (n - t - u) / 2,
+      x: d.length > 1 ? v * B + t : t + (n - t - u) / 2,
       // If value is negative, y starts at zeroLine, otherwise it's zeroLine - barHeight
       y: c >= 0 ? D - S : D,
       height: S,
-      title: V,
+      title: C,
       zeroLineY: D
       // Add zeroLineY to point data
     };
@@ -73,7 +73,7 @@ function E(a, t) {
 const G = {
   class: "container",
   transform: "translate(0, 0)"
-}, L = ["id", "fill", "x", "y", "width", "height", "rx", "ry"], O = ["to", "dur"], T = ["from", "to", "dur"], F = ["x", "y", "transform"], J = /* @__PURE__ */ Y({
+}, L = ["id", "fill", "x", "y", "width", "height", "rx", "ry"], O = ["to", "dur"], T = ["from", "to", "dur"], F = ["x", "y", "transform"], J = /* @__PURE__ */ V({
   __name: "PathGroup",
   props: {
     data: {
@@ -190,15 +190,15 @@ const G = {
       (f(!0), y(W, null, H(o.value, (e, i) => (f(), y("text", {
         key: `label-${i}`,
         class: "v-bars--label-text",
-        style: z(e.style),
+        style: Y(e.style),
         x: e.x,
         y: e.y,
         transform: e.transformText
       }, M(e.text), 13, F))), 128))
     ]));
   }
-}), K = ["width", "height", "viewBox"], Q = { key: 1 }, B = /* @__PURE__ */ Y({
-  __name: "BarsChart",
+}), K = ["width", "height", "viewBox"], Q = { key: 1 }, z = /* @__PURE__ */ V({
+  __name: "VueBars",
   props: {
     data: {
       type: Array,
@@ -273,6 +273,7 @@ const G = {
       default: () => ({
         display: "block",
         overflow: "visible"
+        /* Allow labels/elements outside viewBox if needed */
       })
     }
   },
@@ -300,7 +301,7 @@ const G = {
       width: n.value,
       height: o.value,
       viewBox: e.value,
-      style: z(a.svgStyle),
+      style: Y(a.svgStyle),
       class: "vue-bars"
     }, [
       X(J, {
@@ -318,13 +319,13 @@ const G = {
     ], 12, K)) : (f(), y("div", Q));
   }
 }), U = (a) => {
-  a.component("VueBars", B);
+  a.component("VueBars", z);
 }, tt = {
   install: U,
-  Bars: B
+  VueBars: z
   // Export the component as default
 };
 export {
-  B as VueBars,
+  z as VueBars,
   tt as default
 };
