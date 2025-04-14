@@ -64,10 +64,10 @@ type: NumberConstructor;
 default: number;
 };
 height: {
-type: NumberConstructor;
+type: StringConstructor;
 };
 width: {
-type: NumberConstructor;
+type: StringConstructor;
 };
 viewHeight: {
 type: NumberConstructor;
@@ -142,10 +142,10 @@ type: NumberConstructor;
 default: number;
 };
 height: {
-type: NumberConstructor;
+type: StringConstructor;
 };
 width: {
-type: NumberConstructor;
+type: StringConstructor;
 };
 viewHeight: {
 type: NumberConstructor;

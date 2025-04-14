@@ -64,10 +64,10 @@ const props = defineProps({
     default: 20
   },
   height: {
-    type: Number
+    type: String
   },
   width: {
-    type: Number
+    type: String
   },
   viewHeight: {
     type: Number,
@@ -94,8 +94,8 @@ const props = defineProps({
 const shouldRender = computed(() => props.data && props.data.length >= 1) // Allow rendering even with 1 bar
 
 // SVG dimensions and viewBox
-const svgWidth = computed(() => (props.width ? `${props.width}px` : '100%'))
-const svgHeight = computed(() => (props.height ? `${props.height}px` : '100%'))
+const svgWidth = computed(() => (props.width ? `${props.width}` : '100%'))
+const svgHeight = computed(() => (props.height ? `${props.height}` : '100%'))
 const viewWidth = computed(() => props.viewWidth)
 const viewHeight = computed(() => props.viewHeight)
 const viewBox = computed(() => `0 0 ${viewWidth.value} ${viewHeight.value}`)

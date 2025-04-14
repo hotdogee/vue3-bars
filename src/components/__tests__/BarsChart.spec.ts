@@ -26,19 +26,23 @@ describe('VueBars', () => {
 
   // Test props functionality
   it('applies custom dimensions', () => {
-    const width = 400
-    const height = 200
+    const width = '400px'
+    const height = '200px'
+    const viewWidth = 350
+    const viewHeight = 100
     const wrapper = mount(VueBars, {
       props: {
         data: [1, 2, 3],
         width,
-        height
+        height,
+        viewWidth,
+        viewHeight
       }
     })
     const svg = wrapper.find('svg')
-    expect(svg.attributes('width')).toBe(`${width}px`)
-    expect(svg.attributes('height')).toBe(`${height}px`)
-    expect(svg.attributes('viewBox')).toBe(`0 0 ${width} ${height}`)
+    expect(svg.attributes('width')).toBe(`${width}`)
+    expect(svg.attributes('height')).toBe(`${height}`)
+    expect(svg.attributes('viewBox')).toBe(`0 0 ${viewWidth} ${viewHeight}`)
   })
 
   // Test data point objects
