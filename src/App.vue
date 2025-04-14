@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Bars from './components/BarsChart.vue'
+import VueBars from './components/VueBars.vue'
 const barWidth = ref(15)
 </script>
 
 <template>
   <main>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2, 5, 9, 5, 10, 3, 5, 2, 5, 1, 8, 2, 9, 0]"
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[5]"
         :labelData="[
           '1',
@@ -37,10 +37,10 @@ const barWidth = ref(15)
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2]"
         :labelData="[
           '1',
@@ -62,10 +62,10 @@ const barWidth = ref(15)
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2, 5]"
         :labelData="[
           '1',
@@ -87,10 +87,10 @@ const barWidth = ref(15)
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2, 5, 9]"
         :labelData="[
           '1',
@@ -112,10 +112,10 @@ const barWidth = ref(15)
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2, 5, 9, 5]"
         :labelData="[
           '1',
@@ -137,10 +137,10 @@ const barWidth = ref(15)
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[
           { value: 4, title: 'Tooltip 4' },
           { value: 6, title: 'Tooltip 6' },
@@ -161,10 +161,10 @@ const barWidth = ref(15)
         :barWidth
         :gradient="['#6fa8dc', '#42b983']"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2, -5, 9, 5, 10, 3, 5, 5, 12, 1, 8, 2, 9, 14]"
         :labelData="[
           '1',
@@ -187,10 +187,10 @@ const barWidth = ref(15)
         :barWidth
         :growDuration="1"
       >
-      </Bars>
+      </VueBars>
     </div>
     <div class="chart-container">
-      <Bars
+      <VueBars
         :data="[1, 2, -5, 9, 5, 10, 3, 5, 5, 12, 1, 8, 2, 9, 14]"
         :labelData="[
           'Label 1',
@@ -213,7 +213,7 @@ const barWidth = ref(15)
         :barWidth
         :growDuration="1"
       >
-      </Bars>
+      </VueBars>
     </div>
   </main>
 </template>
@@ -225,7 +225,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: 20px; /* Adding space between the Bars */
+  gap: 20px; /* Adding space between the VueBars */
 }
 
 .chart-container {

@@ -1,6 +1,10 @@
 {
   "name": "vue3-bars",
+  "description": "Simple, elegant spark bars for Vue 3",
   "version": "2.0.0",
+  "repository": "github:hotdogee/vue3-bars",
+  "author": "Han Lin <hotdogee@gmail.com> (https://github.com/hotdogee)",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "files": [
@@ -14,6 +18,16 @@
       "require": "./dist/vue3-bars.umd.cjs"
     }
   },
+  "keywords": [
+    "vue",
+    "vue3",
+    "bars",
+    "svg",
+    "graph",
+    "chart",
+    "data-visualization",
+    "component"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -24,8 +38,8 @@
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
-  "dependencies": {
-    "vue": "^3.5.13"
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
