@@ -19,7 +19,9 @@ export default defineConfig({
       output: {
         globals: { vue: 'Vue' }
       }
-    }
+    },
+    // Optional: Generate source maps for debugging
+    sourcemap: true
   },
   resolve: {
     alias: {

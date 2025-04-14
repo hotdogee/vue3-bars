@@ -328,3 +328,4 @@ const E = {
 export {
   U as VueBars
 };
+//# sourceMappingURL=vue3-bars.js.map
