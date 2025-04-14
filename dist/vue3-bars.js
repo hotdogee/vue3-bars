@@ -1,5 +1,5 @@
-import { defineComponent as Y, computed as h, createElementBlock as y, openBlock as f, Fragment as W, renderList as H, createElementVNode as _, toDisplayString as M, normalizeStyle as z, createVNode as R } from "vue";
-function N(a, t, l) {
+import { defineComponent as Y, computed as h, createElementBlock as y, openBlock as f, Fragment as S, renderList as H, createElementVNode as N, toDisplayString as M, normalizeStyle as z, createVNode as R } from "vue";
+function _(a, t, l) {
   l = l + 1;
   const n = parseInt(a, 16), o = parseInt(t, 16), r = [], e = (n - o) / l;
   r.push(a);
@@ -10,7 +10,7 @@ function N(a, t, l) {
   return r;
 }
 function X(a, t, l = 3) {
-  const n = a.slice(0, 2), o = a.slice(2, 4), r = a.slice(4, 6), u = t.slice(0, 2), e = t.slice(2, 4), i = t.slice(4, 6), s = N(n, u, l), d = N(o, e, l), g = N(r, i, l), m = [];
+  const n = a.slice(0, 2), o = a.slice(2, 4), r = a.slice(4, 6), u = t.slice(0, 2), e = t.slice(2, 4), i = t.slice(4, 6), s = _(n, u, l), d = _(o, e, l), g = _(r, i, l), m = [];
   return s.forEach((P, b) => {
     m.push("" + s[b] + d[b] + g[b]);
   }), m;
@@ -22,14 +22,14 @@ function j(a, { minX: t, minY: l, maxX: n, maxY: o, minBarHeight: r }, u, { max:
   const d = a.map((c) => typeof c == "number" ? c : c.value), g = Math.min(...d, i === 1 / 0 ? d.length ? Math.min(...d) : 0 : i), m = Math.max(...d, e === -1 / 0 ? d.length ? Math.max(...d) : 0 : e), P = Math.abs(m), b = Math.abs(g), I = d.length > 1 ? (n - t - u) / (d.length - 1) : n - t, w = s.labelData.length > 0 ? s.labelHeight : 0;
   let p = 0;
   g < 0 && m <= 0 ? p = b : g < 0 && m > 0 ? p = b + P : p = m;
-  const $ = o - l - w, x = p !== 0 && $ > 0 ? $ / p : 1, V = g >= 0 && g * x < r ? 0 : g < 0 && b * x < r ? r - b * x : 0, D = g < 0 ? o - w - b * x : o - w;
+  const W = o - l - w, x = p !== 0 && W > 0 ? W / p : 1, V = g >= 0 && g * x < r ? 0 : g < 0 && b * x < r ? r - b * x : 0, D = g < 0 ? o - w - b * x : o - w;
   return d.map((c, v) => {
-    const B = typeof a[v] == "number" ? String(a[v]) : a[v].title ?? String(c), C = Math.abs(c) * x, S = Math.max(C - (c >= 0 ? 0 : V), r);
+    const B = typeof a[v] == "number" ? String(a[v]) : a[v].title ?? String(c), C = Math.abs(c) * x, $ = Math.max(C - (c >= 0 ? 0 : V), r);
     return {
       x: d.length > 1 ? v * I + t : t + (n - t - u) / 2,
       // If value is negative, y starts at zeroLine, otherwise it's zeroLine - barHeight
-      y: c >= 0 ? D - S : D,
-      height: S,
+      y: c >= 0 ? D - $ : D,
+      height: $,
       title: B,
       zeroLineY: D
       // Add zeroLineY to point data
@@ -160,7 +160,7 @@ const E = {
       });
     });
     return (r, u) => (f(), y("g", E, [
-      (f(!0), y(W, null, H(n.value, (e) => (f(), y("rect", {
+      (f(!0), y(S, null, H(n.value, (e) => (f(), y("rect", {
         key: e.id,
         id: e.id,
         fill: e.fill,
@@ -171,23 +171,23 @@ const E = {
         rx: e.rx,
         ry: e.ry
       }, [
-        _("animate", {
+        N("animate", {
           attributeName: "height",
           from: "0",
           to: e.height,
           dur: `${e.growDuration}s`,
           fill: "freeze"
         }, null, 8, L),
-        _("animate", {
+        N("animate", {
           attributeName: "y",
           from: a.boundary.maxY - (t.labelProps.labelData.length > 0 ? 20 : 0),
           to: e.y,
           dur: `${e.growDuration}s`,
           fill: "freeze"
         }, null, 8, O),
-        _("title", null, M(e.title), 1)
+        N("title", null, M(e.title), 1)
       ], 8, G))), 128)),
-      (f(!0), y(W, null, H(o.value, (e, i) => (f(), y("text", {
+      (f(!0), y(S, null, H(o.value, (e, i) => (f(), y("text", {
         key: `label-${i}`,
         class: "v-bars--label-text",
         style: z(e.style),
@@ -255,11 +255,17 @@ const E = {
       default: 20
     },
     height: {
+      type: Number
+    },
+    width: {
+      type: Number
+    },
+    viewHeight: {
       type: Number,
       default: 75
       // Default height if not provided
     },
-    width: {
+    viewWidth: {
       type: Number,
       default: 300
       // Default width if not provided
@@ -278,7 +284,7 @@ const E = {
     }
   },
   setup(a) {
-    const t = a, l = h(() => t.data && t.data.length >= 1), n = h(() => t.width ? `${t.width}px` : "100%"), o = h(() => t.height ? `${t.height}px` : "25%"), r = h(() => t.width), u = h(() => t.height), e = h(() => `0 0 ${r.value} ${u.value}`), i = h(() => ({
+    const t = a, l = h(() => t.data && t.data.length >= 1), n = h(() => t.width ? `${t.width}px` : "100%"), o = h(() => t.height ? `${t.height}px` : "100%"), r = h(() => t.viewWidth), u = h(() => t.viewHeight), e = h(() => `0 0 ${r.value} ${u.value}`), i = h(() => ({
       minX: t.padding,
       minY: t.padding,
       maxX: r.value - t.padding,

@@ -64,10 +64,16 @@ const props = defineProps({
     default: 20
   },
   height: {
+    type: Number
+  },
+  width: {
+    type: Number
+  },
+  viewHeight: {
     type: Number,
     default: 75 // Default height if not provided
   },
-  width: {
+  viewWidth: {
     type: Number,
     default: 300 // Default width if not provided
   },
@@ -89,9 +95,9 @@ const shouldRender = computed(() => props.data && props.data.length >= 1) // All
 
 // SVG dimensions and viewBox
 const svgWidth = computed(() => (props.width ? `${props.width}px` : '100%'))
-const svgHeight = computed(() => (props.height ? `${props.height}px` : '25%'))
-const viewWidth = computed(() => props.width)
-const viewHeight = computed(() => props.height)
+const svgHeight = computed(() => (props.height ? `${props.height}px` : '100%'))
+const viewWidth = computed(() => props.viewWidth)
+const viewHeight = computed(() => props.viewHeight)
 const viewBox = computed(() => `0 0 ${viewWidth.value} ${viewHeight.value}`)
 
 // Calculated boundary object to pass to Path component

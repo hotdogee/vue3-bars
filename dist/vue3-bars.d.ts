@@ -65,9 +65,15 @@ default: number;
 };
 height: {
 type: NumberConstructor;
-default: number;
 };
 width: {
+type: NumberConstructor;
+};
+viewHeight: {
+type: NumberConstructor;
+default: number;
+};
+viewWidth: {
 type: NumberConstructor;
 default: number;
 };
@@ -137,9 +143,15 @@ default: number;
 };
 height: {
 type: NumberConstructor;
-default: number;
 };
 width: {
+type: NumberConstructor;
+};
+viewHeight: {
+type: NumberConstructor;
+default: number;
+};
+viewWidth: {
 type: NumberConstructor;
 default: number;
 };
@@ -167,9 +179,9 @@ labelData: (string | number)[];
 labelRotate: number;
 labelColor: string;
 labelSize: number;
-width: number;
-height: number;
 labelHeight: number;
+viewHeight: number;
+viewWidth: number;
 svgStyle: Record<string, any>;
 }, {}, {}, {}, string, ComponentProvideOptions, true, {}, any>;
 

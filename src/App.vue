@@ -230,5 +230,6 @@ main {
 
 .chart-container {
   border: 0px solid black;
+  width: 300px;
 }
 </style>
