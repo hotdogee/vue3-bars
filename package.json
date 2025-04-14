@@ -5,20 +5,19 @@
   "repository": "github:hotdogee/vue3-bars",
   "author": "Han Lin <hotdogee@gmail.com> (https://github.com/hotdogee)",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/vue3-bars.umd.cjs",
   "module": "./dist/vue3-bars.js",
+  "types": "./dist/vue3-bars.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue3-bars.js",
       "require": "./dist/vue3-bars.umd.cjs"
     }
   },
-  "types": "./dist/vue3-bars.d.ts",
   "keywords": [
     "vue",
     "vue3",
