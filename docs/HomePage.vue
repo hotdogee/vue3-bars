@@ -240,8 +240,8 @@ footer {
     monospace;
 }
 
-a {
-  color: #39fda4;
+footer a {
+  color: #0acb1a;
 }
 
 .setting-label {
