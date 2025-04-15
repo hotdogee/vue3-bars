@@ -3,25 +3,25 @@
   <br>
   <h1>Vue 3 Bars</h1>
   <p>🌈 Simple, elegant spark bars for Vue.js</p>
-  <br>
   <a href="https://www.npmjs.org/package/vue3-bars"><img src="https://img.shields.io/npm/v/vue3-bars.svg?style=flat" alt="npm"></a>
   <img src="https://img.shields.io/badge/vue-^3.3-fc08d.svg?colorA=2c3e50&style=flat" alt="vue">
 </div>
 
-<br>
+- 💚 Vue 3 Composition API
+- 🔥 Written in TypeScript
 
-## Live
+## 🚀 Live
 
 - [Demo](https://vue3-bars.hanl.in/)
 - [Playground](https://stackblitz.com/~/github.com/hotdogee/vue3-bars?file=src/App.vue)
 
-## Installation
+## 📦 Installation
 
 ```shell
 npm i vue3-bars
 ```
 
-## Usage
+## 🛠️ Usage
 
 ```js
 import VueBars from 'vue3-bars'
@@ -34,7 +34,7 @@ _vue template_
 </VueBars>
 ```
 
-## Lineage
+## 🧬 Lineage
 
 All credits go to these open-source works and resources 🙏
 
@@ -43,7 +43,7 @@ All credits go to these open-source works and resources 🙏
 - Inspired by [vue-trend](https://github.com/QingWei-Li/vue-trend) - 📈 Simple, elegant spark lines (Vue 2)
 - Inspired by [unsplash/react-trend](https://github.com/unsplash/react-trend) - 📈 Simple, elegant spark lines (React)
 
-## Props
+## ⚙️ Props
 
 | Name         | Type           | Default                                   | Description                                                                                                                         | Example                                                                      |
 | ------------ | -------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -68,11 +68,11 @@ All credits go to these open-source works and resources 🙏
 | min          | Number         | `Infinity`                                | Specify min value                                                                                                                   | -                                                                            |
 | svgStyle     | Object         | `{display: 'block', overflow: 'visible'}` | CSS style on the svg                                                                                                                | -                                                                            |
 
-#### SVG Props
+#### 🖼️ SVG Props
 
 By default, all properties not recognized by Vue Bars will be delegated to the SVG.
 
-## Development
+## 👨‍💻 Development
 
 ```sh
 npm i
@@ -80,7 +80,7 @@ npm run dev
 # open localhost:5173
 ```
 
-### Documentation Site
+### 📚 Documentation Site
 
 ```bash
 npm i
@@ -88,6 +88,6 @@ npm run docs:dev
 # open localhost:5173
 ```
 
-## License
+## 📝 License
 
 MIT
