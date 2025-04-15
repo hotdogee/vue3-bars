@@ -10,6 +10,11 @@
 
 <br>
 
+## Live
+
+- [Demo](https://vue3-bars.hanl.in/)
+- [Playground](https://stackblitz.com/~/github.com/hotdogee/vue3-bars?file=src/App.vue)
+
 ## Installation
 
 ```shell
@@ -21,8 +26,6 @@ npm i vue3-bars
 ```js
 import { VueBars } from 'vue3-bars'
 ```
-
-[Live Demo](https://stackblitz.com/~/github.com/hotdogee/vue3-bars?file=src/App.vue)
 
 _vue template_
 
