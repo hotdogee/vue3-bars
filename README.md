@@ -36,6 +36,7 @@ _vue template_
 
 ## Lineage
 
+- Rewritten for Vue 3 in TypeScript
 - Forked from [vue-bars](https://github.com/DeviaVir/vue-bar) - 🌈 Simple, elegant spark bars (Vue 2)
 - Inspired by [vue-trend](https://github.com/QingWei-Li/vue-trend) - 📈 Simple, elegant spark lines (Vue 2)
 
