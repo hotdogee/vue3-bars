@@ -24,7 +24,7 @@ npm i vue3-bars
 ## Usage
 
 ```js
-import { VueBars } from 'vue3-bars'
+import VueBars from 'vue3-bars'
 ```
 
 _vue template_

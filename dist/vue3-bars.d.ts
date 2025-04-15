@@ -2,15 +2,11 @@ import { ComponentOptionsMixin } from 'vue';
 import { ComponentProvideOptions } from 'vue';
 import { DefineComponent } from 'vue';
 import { ExtractPropTypes } from 'vue';
+import { Plugin as Plugin_2 } from 'vue';
 import { PropType } from 'vue';
 import { PublicProps } from 'vue';
 
-declare interface PointInput {
-    value: number;
-    title?: string | number;
-}
-
-export declare const VueBars: DefineComponent<ExtractPropTypes<    {
+declare const _default: DefineComponent<ExtractPropTypes<    {
 data: {
 type: PropType<(number | PointInput)[]>;
 required: true;
@@ -184,5 +180,15 @@ viewHeight: number;
 viewWidth: number;
 svgStyle: Record<string, any>;
 }, {}, {}, {}, string, ComponentProvideOptions, true, {}, any>;
+
+declare interface PointInput {
+    value: number;
+    title?: string | number;
+}
+
+declare const VueBars: typeof _default & {
+    install: Plugin_2;
+};
+export default VueBars;
 
 export { }

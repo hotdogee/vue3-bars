@@ -145,12 +145,7 @@ const labelProps = computed(() => ({
       :labelProps="labelProps"
       :padding="props.padding"
     />
-    <!-- Removed ID generation, can be added if needed externally -->
   </svg>
-  <div v-else>
-    <!-- Optional: message when data is insufficient -->
-    <!-- Not enough data to render bars. -->
-  </div>
 </template>
 
 <style scoped></style>
