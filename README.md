@@ -36,6 +36,8 @@ _vue template_
 
 ## Lineage
 
+All credits go to these open-source works and resources 🙏
+
 - Rewritten for Vue 3 in TypeScript
 - Forked from [vue-bars](https://github.com/DeviaVir/vue-bar) - 🌈 Simple, elegant spark bars (Vue 2)
 - Inspired by [vue-trend](https://github.com/QingWei-Li/vue-trend) - 📈 Simple, elegant spark lines (Vue 2)
@@ -75,6 +77,14 @@ By default, all properties not recognized by Vue Bars will be delegated to the S
 ```sh
 npm i
 npm run dev
+# open localhost:5173
+```
+
+### Documentation Site
+
+```bash
+npm i
+npm run docs:dev
 # open localhost:5173
 ```
 

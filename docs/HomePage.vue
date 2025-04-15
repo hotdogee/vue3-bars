@@ -22,7 +22,7 @@
     <div>
       <Tabs>
         <Tab value="Configure">
-          <div class="settings-container">
+          <div class="settings-container tab-content">
             <div class="settings-column">
               <div>
                 <div class="setting-label">Width</div>
@@ -216,7 +216,7 @@ h1 {
 
 .code-wrap {
   text-align: left;
-  background-color: #f8f8f8;
+  background-color: #f7f7f7;
   padding: 2em 1.4em;
   line-height: 1.5em;
   margin: 0;
