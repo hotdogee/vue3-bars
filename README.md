@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/1381d170-bce1-44f0-a317-615f378e500c" width="500" alt="Vue Bars">
+  <img src="https://github.com/user-attachments/assets/1381d170-bce1-44f0-a317-615f378e500c" width="500" alt="Vue 3 Bars">
   <br>
   <h1>Vue 3 Bars</h1>
   <p>🌈 Simple, elegant spark bars for Vue.js</p>
   <br>
   <a href="https://www.npmjs.org/package/vue3-bars"><img src="https://img.shields.io/npm/v/vue3-bars.svg?style=flat" alt="npm"></a>
-  <img src="https://img.shields.io/badge/vue-^3.3.0-fc08d.svg?colorA=2c3e50&style=flat" alt="vue">
+  <img src="https://img.shields.io/badge/vue-^3.3-fc08d.svg?colorA=2c3e50&style=flat" alt="vue">
 </div>
 
 <br>
@@ -39,6 +39,7 @@ _vue template_
 - Rewritten for Vue 3 in TypeScript
 - Forked from [vue-bars](https://github.com/DeviaVir/vue-bar) - 🌈 Simple, elegant spark bars (Vue 2)
 - Inspired by [vue-trend](https://github.com/QingWei-Li/vue-trend) - 📈 Simple, elegant spark lines (Vue 2)
+- Inspired by [unsplash/react-trend](https://github.com/unsplash/react-trend) - 📈 Simple, elegant spark lines (React)
 
 ## Props
 
@@ -68,6 +69,14 @@ _vue template_
 #### SVG Props
 
 By default, all properties not recognized by Vue Bars will be delegated to the SVG.
+
+## Development
+
+```sh
+npm i
+npm run dev
+# open localhost:5173
+```
 
 ## License
 
