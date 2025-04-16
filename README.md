@@ -90,6 +90,6 @@ npm run docs:dev
 # open localhost:5173
 ```
 
-## 📝 License
+## 📜 License
 
 MIT
